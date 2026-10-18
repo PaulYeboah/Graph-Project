@@ -1,6 +1,6 @@
-## 6. Integer Linear Programming model
+## Integer Linear Programming model
 
-### 6.1 Decision variables
+### Decision variables
 
 | Variable | Domain | Meaning |
 |---|---|---|
@@ -14,7 +14,7 @@
 
 Waiting time at $i$ is $w_i=S_i-A_i\ge0$.
 
-### 6.2 Objective
+### Objective
 
 $$
 \min \sum_{i\in C} E_i \qquad (O)
@@ -22,7 +22,7 @@ $$
 
 Only the last customer of each route has $E_i>0$, so (O) is the sum of the return times, i.e. the total duration (A4).
 
-### 6.3 Constraints
+### Constraints
 **Routing structure (basic)**
 
 $$
@@ -99,7 +99,7 @@ $$
 
 **Size.** $O(n^2)$ binary variables $x$, $nm$ binaries $z$, $5n$ continuous variables, $O(n^2)$ constraints. This is compact, but the big-M constraints give a **weak LP relaxation**.
 
-### 6.4 Properties of the model
+### Properties of the model
 
 **Proposition 3 (no subtours).** Under (A3), constraints (C1), (C2) and (C4) forbid any cycle among customers.
 *Proof.* (C1)–(C2) make the arcs a union of paths from $0$ to $n+1$ and of disjoint cycles on $C$. Suppose a cycle $i_1\to\dots\to i_r\to i_1$ with $x=1$ on all its arcs. Summing (C4) along the cycle gives $\sum_{t}\ell_{i_t}\ge\sum_t\ell_{i_t}+\sum_t q_{i_t}$, i.e. $0\ge\sum_t q_{i_t}>0$, a contradiction. $\square$
