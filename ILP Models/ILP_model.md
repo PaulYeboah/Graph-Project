@@ -86,13 +86,3 @@ E_i\ \ge\ d_i+\sum_p\tau^p_{i,n+1}\,z_{ip}-M_i\,(1-x_{i,n+1}),\qquad E_i\le T_{\
 $$
 
 If $i$ is the last customer, $E_i$ is at least the return time and at most $T_{\max}$; otherwise $E_i=0$.
-
-### Properties of the model
-
-**Proposition 3 (no subtours).** Under (A3), constraints (C1), (C2) and (C4) forbid any cycle among customers.
-*Proof.* (C1)–(C2) make the arcs a union of paths from $0$ to $n+1$ and of disjoint cycles on $C$. Suppose a cycle $i_1\to\dots\to i_r\to i_1$ with $x=1$ on all its arcs. Summing (C4) along the cycle gives $\sum_{t}\ell_{i_t}\ge\sum_t\ell_{i_t}+\sum_t q_{i_t}$, i.e. $0\ge\sum_t q_{i_t}>0$, a contradiction. $\square$
-The time constraints give a second, independent argument (MTZ-style, Miller et al., 1960): around a cycle, (C6), (C8), (C9) would imply $0\ge\sum(s_i+\tau)>0$ when travel times are positive.
-
-**Proposition 4 (consistency with the proof).** For $k=1$, $Q=\sum q_i$, $m=1$, $s_i=0$, $a_i=0$, $b_i=T_{\max}=H$, the model is exactly the ILP of an asymmetric TSP: (C4) becomes inactive, (C9) is trivially satisfied, and (O) is the length of the single tour. This matches the reduction of Proposition 2.
-
-**Incremental reading.** Basic model = (O), (C1)–(C8), (C10)–(C11) with $a_i=0,b_i=H$. Advanced model = the same with the true windows in (C9). The only added element is the bound $S_i\le b_i$ plus the lower bound $a_i$ that creates waiting.
