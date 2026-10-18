@@ -87,18 +87,6 @@ $$
 
 If $i$ is the last customer, $E_i$ is at least the return time and at most $T_{\max}$; otherwise $E_i=0$.
 
-**Forbidden arcs (optional)**
-
-$$
-x_{ij}=0\quad\forall (i,j)\in F \qquad (C11)
-$$
-
-**Big-M values.** $M_{ij}=H+\max_p\tau^p_{ij}$ and $M_i=H+\max_p\tau^p_{i,n+1}$ are valid since $d_i<H$ and $A_j\ge0$.
-
-**Arc preprocessing (tightening).** An arc can be removed ($x_{ij}=0$) when $q_i+q_j>Q$ or when $a_i+s_i+\min_p\tau^p_{ij}>b_j$ (even the earliest possible arrival is after the window closes). This is valid because $S_i\ge a_i$, $d_i\ge S_i+s_i$, and $A_j\le S_j\le b_j$.
-
-**Size.** $O(n^2)$ binary variables $x$, $nm$ binaries $z$, $5n$ continuous variables, $O(n^2)$ constraints. This is compact, but the big-M constraints give a **weak LP relaxation**.
-
 ### Properties of the model
 
 **Proposition 3 (no subtours).** Under (A3), constraints (C1), (C2) and (C4) forbid any cycle among customers.
