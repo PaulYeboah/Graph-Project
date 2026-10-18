@@ -86,3 +86,15 @@ E_i\ \ge\ d_i+\sum_p\tau^p_{i,n+1}\,z_{ip}-M_i\,(1-x_{i,n+1}),\qquad E_i\le T_{\
 $$
 
 If $i$ is the last customer, $E_i$ is at least the return time and at most $T_{\max}$; otherwise $E_i=0$.
+
+Time windows and waiting (advanced)
+
+$$S_i\ \ge\ A_i,\qquad a_i\le S_i\le b_i\quad\forall i\in C \qquad (C9)$$
+
+$S_i\ge A_i$ and $S_i\ge a_i$ let the truck wait until the window opens; $S_i\le b_i$ forbids serving after the window closes.
+
+Return to the depot and maximum duration
+
+$$E_i\ \ge\ d_i+\sum_p\tau^p_{i,n+1}\,z_{ip}-M_i\,(1-x_{i,n+1}),\qquad E_i\le T_{\max}\,x_{i,n+1}\quad\forall i\in C \qquad (C10)$$
+
+If $i$ is the last customer, $E_i$ is at least the return time and at most $T_{\max}$; otherwise $E_i=0$.
